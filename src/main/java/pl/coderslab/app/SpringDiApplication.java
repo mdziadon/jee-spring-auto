@@ -3,6 +3,7 @@ package pl.coderslab.app;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import pl.coderslab.beans.MessageSender;
 import pl.coderslab.beans.PersonService;
+import pl.coderslab.homework.CustomerLogger;
 
 public class SpringDiApplication {
 
@@ -14,5 +15,8 @@ public class SpringDiApplication {
 
         MessageSender messageSender = context.getBean(MessageSender.class);
         messageSender.sendMessage();
+
+        CustomerLogger logger = context.getBean(CustomerLogger.class);
+        logger.log();
     }
 }
