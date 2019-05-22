@@ -3,7 +3,9 @@ package pl.coderslab.app;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import pl.coderslab.beans.MessageSender;
 import pl.coderslab.beans.PersonService;
+import pl.coderslab.homework.Customer;
 import pl.coderslab.homework.CustomerLogger;
+import pl.coderslab.homework.CustomerRepository;
 
 public class SpringDiApplication {
 
@@ -18,5 +20,9 @@ public class SpringDiApplication {
 
         CustomerLogger logger = context.getBean(CustomerLogger.class);
         logger.log();
+
+        CustomerRepository customerRepository = context.getBean(CustomerRepository.class);
+        customerRepository.addCustomer(new Customer(1L, "Jan", "Kowalski"));
+        System.out.println(customerRepository.getCustomers());
     }
 }
