@@ -19,7 +19,7 @@ public class SpringDiApplication {
         messageSender.sendMessage();
 
         CustomerLogger logger = context.getBean(CustomerLogger.class);
-        logger.log();
+        logger.log("test");
 
         CustomerRepository customerRepository = context.getBean(CustomerRepository.class);
         customerRepository.addCustomer(new Customer(1L, "Jan", "Kowalski"));

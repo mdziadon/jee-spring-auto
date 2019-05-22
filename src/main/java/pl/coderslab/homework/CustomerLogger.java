@@ -2,6 +2,6 @@ package pl.coderslab.homework;
 
 public interface CustomerLogger {
 
-    void log();
+    void log(String message);
 
 }

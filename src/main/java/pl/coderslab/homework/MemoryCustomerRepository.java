@@ -20,19 +20,19 @@ public class MemoryCustomerRepository implements CustomerRepository {
 
     @Override
     public void addCustomer(Customer customer) {
-        logger.log();
+        logger.log("Adding customer");
         customers.add(customer);
     }
 
     @Override
     public void deleteCustomer(Long id) {
-        logger.log();
+        logger.log("Deleting customer");
         customers.removeIf(c -> c.getId().equals(id));
     }
 
     @Override
     public List<Customer> getCustomers() {
-        logger.log();
+        logger.log("Getting customers");
         return customers;
     }
 }

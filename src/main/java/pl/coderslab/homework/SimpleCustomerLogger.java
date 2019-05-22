@@ -9,9 +9,9 @@ import java.time.format.DateTimeFormatter;
 public class SimpleCustomerLogger implements CustomerLogger {
 
     @Override
-    public void log() {
+    public void log(String message) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        System.out.println(LocalDateTime.now().format(formatter) + ": Customer operation");
+        System.out.println(LocalDateTime.now().format(formatter) + ": " + message);
     }
 
 }
